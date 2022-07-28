@@ -7,4 +7,5 @@
     <string name="save">Save</string>
     <string name="adapter_pattern">Adapter pattern</string>
     <string name="decorator_pattern">Decorator pattern</string>
+    <string name="factory_pattern">Factory pattern</string>
 </resources>

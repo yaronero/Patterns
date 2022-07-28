@@ -1,32 +1,36 @@
 package com.example.patterns.data.builders
 
 class SmartphoneAdvBuilder private constructor(
-    val model: String,
-    val price: Int,
-    val description: String?,
-    val memorySize: Int?,
-    val cameraAmount: Int?,
-    val diagonal: String?
+    private val model: String?,
+    private val price: Int?,
+    private val description: String?,
+    private val memorySize: Int?,
+    private val cameraAmount: Int?,
+    private val diagonal: String?
 ) {
 
-    data class Builder(
-        var model: String,
-        var price: Int,
-        var description: String? = null,
-        var memorySize: Int? = null,
-        var cameraAmount: Int? = null,
-        var diagonal: String? = null
-    ) {
+    class Builder {
 
-        fun setDescription(description: String) = apply { this.description = description }
+        private var model: String? = null
+        private var price: Int? = null
+        private var description: String? = null
+        private var memorySize: Int? = null
+        private var cameraAmount: Int? = null
+        private var diagonal: String? = null
 
-        fun setMemorySize(memorySize: Int) = apply { this.memorySize = memorySize }
+        fun setModel(model: String): Builder = apply { this.model = model }
 
-        fun setCameraAmount(cameraAmount: Int) = apply { this.cameraAmount = cameraAmount }
+        fun setPrice(price: Int): Builder = apply { this.price = price }
 
-        fun setDiagonal(diagonal: String) = apply { this.diagonal = diagonal }
+        fun setDescription(description: String): Builder = apply { this.description = description }
 
-        fun build() = SmartphoneAdvBuilder(
+        fun setMemorySize(memorySize: Int): Builder = apply { this.memorySize = memorySize }
+
+        fun setCameraAmount(cameraAmount: Int): Builder = apply { this.cameraAmount = cameraAmount }
+
+        fun setDiagonal(diagonal: String): Builder = apply { this.diagonal = diagonal }
+
+        fun build(): SmartphoneAdvBuilder = SmartphoneAdvBuilder(
             model, price, description, memorySize, cameraAmount, diagonal
         )
     }

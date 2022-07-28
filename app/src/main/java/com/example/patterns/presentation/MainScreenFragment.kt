@@ -10,6 +10,7 @@ import com.example.patterns.databinding.FragmentMainScreenBinding
 import com.example.patterns.presentation.adapter.AdapterFragment
 import com.example.patterns.presentation.builder.BuilderFragment
 import com.example.patterns.presentation.decorator.DecoratorFragment
+import com.example.patterns.presentation.factory.FactoryFragment
 import com.example.patterns.presentation.gif.GifFragment
 
 class MainScreenFragment : Fragment() {
@@ -40,6 +41,9 @@ class MainScreenFragment : Fragment() {
         }
         binding.btnDecorator.setOnClickListener {
             launchFragment(DecoratorFragment())
+        }
+        binding.btnFactory.setOnClickListener {
+            launchFragment(FactoryFragment())
         }
     }
 

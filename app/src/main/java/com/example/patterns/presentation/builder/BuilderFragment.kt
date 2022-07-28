@@ -24,7 +24,9 @@ class BuilderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val smartphone = SmartphoneAdvBuilder.Builder("Xiaomi", 1234)
+        val smartphone = SmartphoneAdvBuilder.Builder()
+            .setModel("Xiaomi")
+            .setPrice(200)
             .setMemorySize(64)
             .setCameraAmount(2)
             .build()

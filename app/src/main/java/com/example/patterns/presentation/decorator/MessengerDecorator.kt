@@ -1,50 +1,32 @@
 package com.example.patterns.presentation.decorator
 
 class MessengerDecorator(
-    private val facebookMessenger: FacebookMessenger? = null,
-    private val telegramMessenger: TelegramMessenger? = null,
-    private val snapChatMessenger: SnapChatMessenger? = null
+    private val facebookMessenger: FacebookMessenger,
+    private val telegramMessenger: TelegramMessenger,
+    private val snapChatMessenger: SnapChatMessenger
 ) : Messenger {
 
     override fun sendMessage(message: String): String {
         val str = StringBuilder()
-        facebookMessenger?.let {
-            str.append(it.sendMessage(message))
-        }
-        telegramMessenger?.let {
-            str.append(it.sendMessage(message))
-        }
-        snapChatMessenger?.let {
-            str.append(it.sendMessage(message))
-        }
+        str.append(facebookMessenger.sendMessage(message))
+        str.append(telegramMessenger.sendMessage(message))
+        str.append(snapChatMessenger.sendMessage(message))
         return str.toString()
     }
 
     override fun sendImage(imageId: Int): String {
         val str = StringBuilder()
-        facebookMessenger?.let {
-            str.append(it.sendImage(imageId))
-        }
-        telegramMessenger?.let {
-            str.append(it.sendImage(imageId))
-        }
-        snapChatMessenger?.let {
-            str.append(it.sendImage(imageId))
-        }
+        str.append(facebookMessenger.sendImage(imageId))
+        str.append(telegramMessenger.sendImage(imageId))
+        str.append(snapChatMessenger.sendImage(imageId))
         return str.toString()
     }
 
     override fun makePost(post: String): String {
         val str = StringBuilder()
-        facebookMessenger?.let {
-            str.append(it.makePost(post))
-        }
-        telegramMessenger?.let {
-            str.append(it.makePost(post))
-        }
-        snapChatMessenger?.let {
-            str.append(it.makePost(post))
-        }
+        str.append(facebookMessenger.makePost(post))
+        str.append(telegramMessenger.makePost(post))
+        str.append(snapChatMessenger.makePost(post))
         return str.toString()
     }
 }

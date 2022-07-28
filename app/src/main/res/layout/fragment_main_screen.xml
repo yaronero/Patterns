@@ -33,4 +33,12 @@
         android:layout_gravity="center"
         android:text="@string/decorator_pattern" />
 
+    <Button
+        android:id="@+id/btn_factory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/factory_pattern" />
+
+
 </LinearLayout>

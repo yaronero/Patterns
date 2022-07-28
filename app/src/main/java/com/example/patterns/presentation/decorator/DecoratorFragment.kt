@@ -25,8 +25,9 @@ class DecoratorFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val decorator = MessengerDecorator(
+            facebookMessenger = FacebookMessenger(),
             telegramMessenger = TelegramMessenger(),
-            facebookMessenger = FacebookMessenger()
+            snapChatMessenger = SnapChatMessenger()
         )
 
         binding.tvSomething.text = decorator.sendMessage("Hello")
