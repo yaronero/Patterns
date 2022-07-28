@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Patterns</string>
+    <string name="open_giphy_api">Open Giphy API</string>
+    <string name="builder_pattern">Builder pattern</string>
+    <string name="random_gif">Random gif</string>
+    <string name="load_next">Load next</string>
+    <string name="save">Save</string>
+    <string name="adapter_pattern">Adapter pattern</string>
+    <string name="decorator_pattern">Decorator pattern</string>
+</resources>
